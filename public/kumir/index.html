@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Веб-тренажёр исполнителя Робот: задания по алгоритмическому языку КуМир." />
+  <title>Робот КуМир — тренажёр</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=config-1" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/metod/" aria-label="На главную Методической мастерской">
+        <span class="brand-mark">Р</span>
+        <span><b>Робот</b><small>← Методическая мастерская</small></span>
+      </a>
+      <div class="progress-summary">
+        <span id="progressLabel">Загрузка заданий…</span>
+        <div class="progress-track"><i id="progressBar"></i></div>
+      </div>
+      <a class="constructor-link" href="editor/index.html">Конструктор заданий</a>
+      <button class="icon-btn" id="helpBtn" aria-label="Справка">?</button>
+    </header>
+
+    <p id="loadStatus" role="status">Загрузка заданий…</p>
+    <main id="simulatorContent" hidden>
+      <nav class="categories" id="categories" aria-label="Категории заданий"></nav>
+      <section class="task-heading">
+        <div><span class="eyebrow" id="categoryLabel"></span><h1 id="taskTitle"></h1></div>
+        <div class="task-nav"><button id="prevBtn" aria-label="Предыдущее задание">←</button><span id="taskCount"></span><button id="nextBtn" aria-label="Следующее задание">→</button></div>
+      </section>
+      <nav class="task-dots" id="taskDots" aria-label="Выбор задания"></nav>
+
+      <section class="task-brief panel">
+        <div class="panel-title"><span>Условие</span><span class="difficulty" id="difficulty"></span></div>
+        <p id="taskDescription"></p>
+      </section>
+
+      <section class="workspace">
+        <article class="panel task-panel">
+          <div class="panel-title"><span>Поле Робота</span></div>
+          <div class="legend"><span><i class="dot robot-dot"></i>Робот</span><span><i class="dot target-dot"></i>закрасить</span><span><i class="wall-sample"></i>стена</span></div>
+          <div class="board-wrap" id="boardWrap"></div>
+          <button class="secondary-btn" id="resetBtn">↻ Вернуть Робота</button>
+        </article>
+
+        <article class="panel editor-panel">
+          <div class="panel-title"><span>Программа</span><button class="text-btn" id="templateBtn">Начать заново</button></div>
+          <div class="editor-wrap">
+            <div class="line-numbers" id="lineNumbers"></div>
+            <div class="code-stack">
+              <pre id="highlightedCode" aria-hidden="true"></pre>
+              <textarea id="code" spellcheck="false" aria-label="Редактор алгоритма"></textarea>
+            </div>
+          </div>
+          <div class="editor-actions">
+            <label class="speed">Скорость <input id="speed" type="range" min="0" max="500" step="50" value="200"></label>
+            <button class="run-btn" id="runBtn"><span>▶</span> Запустить</button>
+          </div>
+          <div class="message" id="message" role="status"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="helpDialog">
+    <button class="dialog-close" id="closeHelp" aria-label="Закрыть">×</button>
+    <span class="eyebrow">Шпаргалка</span><h2>Команды Робота</h2>
+    <div class="help-grid">
+      <code>вверх<br>вниз<br>влево<br>вправо<br>закрасить</code>
+      <code>если справа свободно то<br>&nbsp;&nbsp;вправо<br>все</code>
+      <code>нц пока слева свободно<br>&nbsp;&nbsp;влево<br>кц</code>
+      <code>нц 4 раз<br>&nbsp;&nbsp;вверх<br>кц</code>
+    </div>
+    <p>Условия: <b>сверху / снизу / слева / справа свободно</b> или <b>стена</b>, а также <b>клетка закрашена</b> и частица <b>не</b>.</p>
+  </dialog>
+  <script src="task-config.js?v=1"></script>
+  <script src="app.js?v=paint-only"></script>
+</body>
+</html>

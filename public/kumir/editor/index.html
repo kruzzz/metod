@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Конструктор заданий КуМир</title><link rel="stylesheet" href="editor.css"></head>
+<body>
+<header><a href="../index.html">← Симулятор КуМир</a><span>Методическая мастерская / для педагога</span></header>
+<main>
+  <div class="heading"><div><p class="eyebrow">Конструктор заданий</p><h1>Создайте поле для Робота</h1><p>Выберите категорию, настройте задания и скачайте её файл.</p></div><a href="../instructions.html">Инструкция по размещению →</a></div>
+  <p id="status" role="status">Загрузка…</p>
+  <fieldset id="editor" disabled>
+    <div class="filebar"><label>Категория<select id="category"></select></label><button id="importButton">Открыть JSON</button><input id="importFile" type="file" accept=".json,application/json" hidden><button id="exportButton" class="primary">Скачать файл категории</button></div>
+    <p class="destination">Место на сайте: <code id="destination"></code>. Файл заменяет все задания этой категории.</p>
+    <div class="layout">
+      <aside class="panel"><h2>Задания <span id="taskTotal"></span></h2><div id="taskList" class="task-list"></div><button id="addTask">+ Добавить задание</button><button id="cloneTask">Дублировать задание</button><button id="deleteTask" class="danger">Удалить задание</button></aside>
+      <section class="panel details">
+        <div class="metadata"><label>Название<input id="title" maxlength="160"></label><label>Условие<textarea id="description" rows="3" maxlength="5000"></textarea></label></div>
+        <div class="fieldbar"><h2>Поля <span id="fieldTotal"></span></h2><div id="fieldTabs"></div><button id="addField">+ Поле</button><button id="deleteField" class="danger">Удалить поле</button></div>
+        <p>Одна программа ученика проверяется на каждом поле этого задания.</p>
+        <div class="sizebar"><label>Строки<input id="rows" type="number" min="1" max="30"></label><label>Столбцы<input id="cols" type="number" min="1" max="30"></label><button id="resize">Применить размер</button><small>Клетки и стены за новым размером будут удалены.</small></div>
+        <div id="tools" class="tools" aria-label="Инструменты поля"></div>
+        <p id="toolHint" class="hint"></p>
+        <div class="grid-scroll"><div id="grid" class="grid" aria-label="Редактор поля"></div></div>
+        <div class="legend"><span>◆ Робот</span><span>● Закрасить</span><span>▨ Уже закрашена</span></div>
+        <p id="fieldSummary"></p>
+        <details><summary>Начальный код программы (необязательно)</summary><textarea id="starterCode" rows="6" maxlength="20000" spellcheck="false" aria-label="Начальный код"></textarea></details>
+      </section>
+    </div>
+  </fieldset>
+  <p class="footer-note">Черновик сохраняется в этом браузере. Скачанный JSON — ваша резервная копия. Конструктор не изменяет файлы опубликованного сайта автоматически.</p>
+</main>
+<script src="../task-config.js"></script><script src="editor.js?v=paint-only"></script>
+</body></html>
