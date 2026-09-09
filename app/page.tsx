@@ -12,7 +12,7 @@ export default function HomePage() {
       <section className="home-hero shell">
         <img
           className="home-logo"
-          src="/metod/informatics-logo.png"
+          src="/informatics-logo.png"
           alt="Компьютер над открытой книгой с карандашом и линейкой"
           width="1254"
           height="1254"
@@ -38,7 +38,7 @@ export default function HomePage() {
           </div>
           <span className="project-open" aria-hidden="true"><ArrowUpRight size={24} /></span>
         </Link>
-        <a href="/metod/kumir/index.html" className="project-card">
+        <a href="/kumir/index.html" className="project-card">
           <span className="project-number">02</span>
           <div className="project-content">
             <h3>Симулятор КуМир</h3>
@@ -46,7 +46,7 @@ export default function HomePage() {
           </div>
           <span className="project-open" aria-hidden="true"><ArrowUpRight size={24} /></span>
         </a>
-        <a href="/metod/complexity/index.html" className="project-card">
+        <a href="/complexity/index.html" className="project-card">
           <span className="project-number">03</span>
           <div className="project-content">
             <h3>Симулятор сложности алгоритмов</h3>

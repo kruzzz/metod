@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: "Методическая мастерская — разработки для уроков информатики",
   description: "Практические цифровые инструменты и учебные проекты для проведения уроков информатики.",
   icons: {
-    icon: "/metod/favicon.svg",
-    shortcut: "/metod/favicon.svg",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
 };
 
