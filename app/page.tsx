@@ -22,6 +22,9 @@ export default function HomePage() {
         <p className="home-description">
           Практические инструменты, которые помогают готовить задания и проводить уроки.
         </p>
+        <p style={{ marginTop: "16px", fontSize: "15px", color: "#627a76" }}>
+          Автор разработок — Круглов П. М.
+        </p>
       </section>
 
       <section className="projects-section shell" aria-labelledby="projects-title">
